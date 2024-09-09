@@ -1,29 +1,80 @@
-using System;
-using System.Windows.Forms;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-using WinFormsApp;
+using Microsoft.Extensions.DependencyInjection;
+using ReactWebView2_Template;
+using System.Threading;
+using System.Windows;
 
-namespace my_new_app
+
+public class Program : Application
 {
-    public class Program
-    {
-        [STAThread]
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().RunAsync();
+    private readonly WebApplication app;
+    private readonly CancellationTokenSource cancellationToken;
 
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+    public IServiceProvider ServiceProvider { get; }
+    private readonly IServiceScope serviceScope;
+    
+    [STAThread]
+    public static void Main()
+    {
+        new Program().Run();
+    }
+
+    public Program()
+    {
+
+        cancellationToken = new CancellationTokenSource();
+
+        var builder = WebApplication.CreateBuilder();
+
+        // Add services to the container.
+        builder.Services.AddSingleton<MainWindow>(); // Creates the WPF Main Window
+        builder.Services.AddControllersWithViews();
+
+        app = builder.Build();
+
+
+        // Configure the HTTP request pipeline.
+        if (!app.Environment.IsDevelopment())
+        {
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+
+
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller}/{action=Index}/{id?}");
+
+        app.MapFallbackToFile("index.html");;
+
+        app.Urls.Add("https://localhost:10000");
+
+        serviceScope = app.Services.CreateScope();
+        ServiceProvider = serviceScope.ServiceProvider;
+
     }
+
+    protected override async void OnStartup(StartupEventArgs e)
+    { 
+        await app.StartAsync(cancellationToken.Token);
+
+        Application.Current.Dispatcher.Invoke((Action)delegate {
+            var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+        });
+
+        base.OnStartup(e);
+    }
+
+    protected override async void OnExit(ExitEventArgs e)
+    {
+        serviceScope?.Dispose();
+        await app.StopAsync(cancellationToken.Token);
+        await app.DisposeAsync();
+        base.OnExit(e);
+    }
+
 }
