@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using ReactWebView2_Template;
+using ReactWebView2_Template.Models;
 using System.Threading;
 using System.Windows;
 
@@ -54,6 +55,10 @@ public class Program : Application
 
         serviceScope = app.Services.CreateScope();
         ServiceProvider = serviceScope.ServiceProvider;
+
+        // DataBase Initializaction
+        var db = new TemplateContext();
+        db.Intitialize();
 
     }
 
