@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using ReactWebView2_Template;
 using ReactWebView2_Template.Models;
@@ -35,6 +36,15 @@ public class Program : Application
             builder.Services.AddSingleton<MainWindow>(); // Creates the WPF Main Window
             builder.Services.AddControllersWithViews();
             builder.Logging.AddSerilog();
+            builder.Services.Configure<KestrelServerOptions>(options =>
+            {
+                options.ConfigureHttpsDefaults(options =>
+                {
+                    options.ClientCertificateMode = Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode.NoCertificate;
+                    options.AllowAnyClientCertificate();
+                });
+
+            });
 
             app = builder.Build();
 
@@ -46,7 +56,7 @@ public class Program : Application
                 app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
 
