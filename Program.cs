@@ -36,15 +36,6 @@ public class Program : Application
             builder.Services.AddSingleton<MainWindow>(); // Creates the WPF Main Window
             builder.Services.AddControllersWithViews();
             builder.Logging.AddSerilog();
-            builder.Services.Configure<KestrelServerOptions>(options =>
-            {
-                options.ConfigureHttpsDefaults(options =>
-                {
-                    options.ClientCertificateMode = Microsoft.AspNetCore.Server.Kestrel.Https.ClientCertificateMode.NoCertificate;
-                    options.AllowAnyClientCertificate();
-                });
-
-            });
 
             app = builder.Build();
 
@@ -56,7 +47,7 @@ public class Program : Application
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
 
@@ -67,7 +58,7 @@ public class Program : Application
 
             app.MapFallbackToFile("index.html"); ;
 
-            app.Urls.Add("https://localhost:10000");
+            app.Urls.Add("http://localhost:10002");
 
             serviceScope = app.Services.CreateScope();
             ServiceProvider = serviceScope.ServiceProvider;
