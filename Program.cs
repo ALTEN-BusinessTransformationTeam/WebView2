@@ -49,7 +49,7 @@ public class Program : Application
 
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseRouting();
+            app.UseRouting(); 
 
 
             app.MapControllerRoute(

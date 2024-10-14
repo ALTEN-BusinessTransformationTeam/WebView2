@@ -11,7 +11,7 @@ using ReactWebView2_Template.Models;
 
 namespace ReactWebView2_Template.Migrations
 {
-    [DbContext(typeof(TemplateContext))]
+    [DbContext(typeof(Context))]
     [Migration("20240912202800_InitialCreate")]
     partial class InitialCreate
     {

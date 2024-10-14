@@ -5,3 +5,62 @@
 2024-09-17 12:03:55.385 +02:00 [INF] Starting web application
 2024-09-17 12:04:54.958 +02:00 [INF] Starting web application
 2024-09-17 12:06:15.175 +02:00 [INF] Starting web application
+2024-10-14 11:19:27.889 +02:00 [INF] Starting web application
+2024-10-14 11:26:28.785 +02:00 [INF] Starting web application
+2024-10-14 11:26:29.113 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:27:28.350 +02:00 [INF] Starting web application
+2024-10-14 11:27:28.549 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:28:45.815 +02:00 [INF] Starting web application
+2024-10-14 11:28:46.075 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:29:41.438 +02:00 [INF] Starting web application
+2024-10-14 11:29:41.665 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:30:12.786 +02:00 [INF] Starting web application
+2024-10-14 11:30:12.985 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:33:44.655 +02:00 [INF] Starting web application
+2024-10-14 11:33:44.997 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:35:47.370 +02:00 [INF] Starting web application
+2024-10-14 11:35:47.659 +02:00 [FTL] Application terminated unexpectedly
+Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException: Exception of type 'Microsoft.Extensions.Hosting.HostFactoryResolver+HostingListener+StopTheHostException' was thrown.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program..ctor() in C:\Users\alvaro.castilla\source\repos\WebView2\Program.cs:line 40
+2024-10-14 11:42:53.562 +02:00 [INF] Starting web application
+2024-10-14 11:45:22.459 +02:00 [INF] Starting web application
